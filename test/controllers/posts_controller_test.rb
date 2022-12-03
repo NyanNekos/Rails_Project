@@ -1,36 +1,37 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-
   setup do
     sign_in users(:one)
     @post = posts(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get posts_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_post_url
     assert_response :success
   end
 
-  #test "should create post" do
+  # test "should create post" do
   # assert_difference("Post.count") do
-      #post posts_url, params: { post: { Description: @post.Description, title: @post.title } }
-      #end
+  # post posts_url, params: { post: { Description: @post.Description, title: @post.title } }
+  # end
 
-    #assert_redirected_to post_url(Post.last)
-    # end
+  # assert_redirected_to post_url(Post.last)
+  # end
 
-  test "should show post" do
+  test 'should show post' do
     get post_url(@post)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_post_url(@post)
     assert_response :success
   end
@@ -40,8 +41,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   #    assert_redirected_to post_url(@post)
   #  end
 
-  test "should destroy post" do
-    assert_difference("Post.count", -1) do
+  test 'should destroy post' do
+    assert_difference('Post.count', -1) do
       delete post_url(@post)
     end
 
