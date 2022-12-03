@@ -1,0 +1,17 @@
+<main class="page novel-post-list">
+  <section class="clean-block clean-novel-list dark">
+    <div class="container">
+      <div class="block-heading"><br>
+        <h2 class="text-info">Novel Post List</h2>
+        <p> Read other peoples novels and comment on what you think. explore and enjoy other peoples story</p>
+      </div>
+      <div id="posts">
+        <% @posts.each do |post| %>
+          <%= render post %>
+          <div class="break-posts"></div>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>

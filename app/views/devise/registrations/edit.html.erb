@@ -1,0 +1,16 @@
+<!-- Created using bootstrap studio This page organises the Edit User Profile Page-->
+
+<!--using bootstrap-->
+<main class="page login-page">
+  <section class="clean-block clean-form dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Editing <%= current_user.name %> Account</h2>
+        <p>Edit your account to what you desire it to be. Feel free to change your username or password anytime</p>
+      </div>
+      <!-- render code from the form and error message -->
+      <%=render "editform" %>
+    </div>
+  </section>
+</main>
+

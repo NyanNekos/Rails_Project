@@ -1,0 +1,15 @@
+<div class = "comment-<%= comment.id%> container"
+  style="border: 1px solid #2E2F30; margin-top: 2.5%; background-color: #F5DEB3FF;">
+  <p> User: <%= comment.user.name %></p>
+
+  <span>Posted <%= time_ago_in_words(comment.created_at) %> ago</span>
+
+  <%if current_user == comment.user %>
+
+    <div class="button-group float-end">
+      <%=button_to "Delete Comment", [post, comment], class:"btn btn-danger", method: :delete%>
+    </div>
+  <% end %>
+  <hr/>
+    <%= comment.body %>
+</div>

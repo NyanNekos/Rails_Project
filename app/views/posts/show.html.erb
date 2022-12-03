@@ -1,0 +1,42 @@
+<main class="page novel-post">
+  <section class="clean-block clean-post dark">
+    <div class="container">
+      <div class="block-content">
+        <div class="post-body">
+
+          <div class="block-content">
+            <div class="clean-novel-post">
+          <h2>Novel Title:<br></h2>
+          <h3><%= @post.title %></h3>
+          <div class="info">Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, user_path(@post.user) %>
+          <p><%= @post.Description %></p>
+          </div>
+        <%if @post.user == current_user %>
+
+            <%= link_to "Edit this post", edit_post_path(@post),class:"btn btn-primary" %>
+            <%= button_to "Destroy this post", @post, method: :delete, class:"btn btn-danger" %> <br>
+        <% end %>
+        <%= link_to "Back to posts", posts_path,class:"btn btn-secondary" %><hr>
+          <%= render "comments/form", post: @post%>
+
+          <% @comments.each do|comment| %>
+            <%= render "comments/comment", post: @post, comment: comment%>
+          <% end %>
+      </div>
+      </div>
+   <div class="container">
+
+
+   </div>
+
+    </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+

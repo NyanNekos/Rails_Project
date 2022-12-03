@@ -1,0 +1,7 @@
+<%= form_with(model: [post, post.comments.build]) do |f| %>
+  <div class="form-control">
+    <%= f.rich_text_area :body%>
+    <br>
+    <%= f.submit "Comment", class: "btn btn-primary" %>
+  </div>
+<% end %>

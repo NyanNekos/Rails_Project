@@ -1,0 +1,14 @@
+
+<div class="block-content">
+  <div class="clean-novel-post">
+    <div class="row">
+      <div class="col-lg-7">
+        <h2>Novel Title:<br></h2>
+        <h3><%= post.title %></h3>
+        <div class="info"><span class="text-muted">Posted <%= time_ago_in_words(post.created_at) %> ago by <a> <%= link_to post.user.name, user_path(post.user) %></a></span></div>
+        <p><%= post.Description %></p>
+      </div>
+      <div class="novel-buttons"><button class="btn novel-buttons" type="button"> <%= link_to "Show this post", post ,  class:"nav-link active"%> </button></div>
+    </div>
+  </div>
+</div>

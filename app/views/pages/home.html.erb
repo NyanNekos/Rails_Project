@@ -1,0 +1,74 @@
+<!-- Site was made using the app Bootstrap Studio Applied for the student version to create a website with bootstrap -->
+
+<body>
+ <div class="navbar"><%= render "layouts/navbar" %></div>
+<main class="page landing-page">
+  <section class="clean-block clean-hero" style="background-image: url(<%= asset_path 'home/imagedesk.jpg' %>);color: #f5deb3a6;">
+    <div class="text">
+      <h2>Welcome To NovelR</h2>
+      <p>Find All the newest released Novels made by talented starter individuals. Read about there stories and comment&nbsp;</p>
+      <%= button_to "View Novels", posts_path, method: :get, class:"btn btn-outline-light btn-lg" %>
+    </div>
+  </section>
+
+
+  <section class="clean-block clean-info dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Info</h2>
+        <p>Want to be a creator also? Publish your own novels and see what others think. Share the story of your imagination</p>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-6"><img class="img-thumbnail" src=<%= asset_path 'home/novels.jpg' %>></div>
+        <div class="col-md-6">
+          <h3>Many creators for publication</h3>
+          <div class="getting-started-info">
+            <p>Many creators that upload there novels also have a chance for there novels to be published worldwide. Buy some of there works now to support them</p>
+          </div>
+          <%= button_to "Buy Now","https://www.easons.com/custom-catalog/top_100_books?gclid=Cj0KCQiAvqGcBhCJARIsAFQ5ke4gZRuX9Wx-4CmVqHRDOdETFosfaohS9nvbFn8oWU-ZIEKY4ViViIsaAr6oEALw_wcB", method: :get, class:"btn btn-outline-primary btn-lg" %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="clean-block features">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Popular Light Novels</h2>
+        <p> Some popular authors and rankings can be seen here. From small creators to very popular creators today</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 feature-box">
+          <!-- Twitter embeded link for external source of data-->
+          <a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" data-theme="light" href="https://twitter.com/Erzat110?ref_src=twsrc%5Etfw">Tweets by Erzat110</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="clean-block slider dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Novel Authors</h2>
+        <p>Here are some novels that you may like. These are some talented authors who have won awards and have published some novels</p>
+      </div>
+    <%=render "topnovel" %>
+    </div>
+  </section>
+
+
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">About NovelR</h2>
+        <p>NovelR was created using Ruby on rails as the framework. Bootstrap studio was used to create the html and css of the website. This site was made by Joswel,x19369011</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+</body>

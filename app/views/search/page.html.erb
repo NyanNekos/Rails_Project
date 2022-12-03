@@ -1,0 +1,37 @@
+
+  <section class="clean-block clean-post dark">
+    <h1 class="text-center"><%= pluralize(@posts.count, " Result") %></h1>
+    <div class="container">
+      <div class="block-content">
+        <div class="post-body">
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th><%=sort_link(@q, :title, "Title", default_order: :asc) %></th>
+      <th><%=sort_link(@q, :Description, "Novel Description") %></th>
+      <th><%=sort_link(@q, :user_name, "Users") %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @posts.each do|post| %>
+    <tr>
+      <td><%=link_to post.title, post %></td>
+      <td><%= post.Description.to_plain_text.truncate_words(15) %></td>
+      <td><%=link_to post.user.name, user_path(post.user)%></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+

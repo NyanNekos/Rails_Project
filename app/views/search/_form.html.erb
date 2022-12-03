@@ -1,0 +1,7 @@
+<%# Search form from ransack, q is the query , method make sure its getting and not creating or doing anything else%>
+<%# d-flex is bootstrap styling %>
+<%= search_form_for(@q, url: search_path, class:"d-flex") do |f| %>
+  <%= f.search_field :title_or_action_text_rich_text_body_or_user_name_or_user_email_i_cont_any, placeholder: "Search For Novels..." , class: "search-bar"%>
+  <div class="btn-search"> <%= f.submit "Search!", class: "btn btn-search" %> </div>
+<% end %>
+

@@ -1,0 +1,24 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <form>
+    <div class="mb-3"><%= f.label :email %><%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control item" %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="mb-3"><%= f.label :name %><%= f.text_field :name,class: "form-control item" %></div>
+
+        <div class="mb-3">
+          <% if @minimum_password_length %>
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i> <em><%= @minimum_password_length %> characters minimum</em>
+            <%= f.password_field :password, autocomplete: "new-password",class: "form-control item"  %>
+          <% end %>
+        </div>
+
+    <div class="mb-3"><%= f.label :password_confirmation %><br/><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control item" %></div>
+
+    <div class="mb-3"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/><%= f.password_field :current_password, autocomplete: "current-password",class: "form-control item" %></div>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+
+  </form>
+<% end %>
